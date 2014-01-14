@@ -1,0 +1,16 @@
+server {
+  listen 80;
+
+  location ~ (/videos) {
+    rewrite /videos/(.*)$ /$1 break;
+    proxy_set_header Host {{ video_host }};
+    proxy_pass http://{{ video_host }};
+    proxy_redirect default;
+  }
+
+  location / {
+    proxy_set_header Host {{ app_host }};
+    proxy_pass http://{{ app_host }};
+    proxy_redirect default;
+  }
+}

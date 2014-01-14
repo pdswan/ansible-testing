@@ -1,0 +1,7 @@
+[reverse_proxy]
+ec2-54-201-248-255.us-west-2.compute.amazonaws.com
+
+[reverse_proxy:vars]
+app_host = zephyr-preproduction.herokuapp.com
+video_host = videos.gust.com
+marketing_host = zephyr-marketing-acceptance.herokuapp.com
