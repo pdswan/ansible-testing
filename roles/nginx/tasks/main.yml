@@ -1,0 +1,6 @@
+---
+- name: install nginx
+  apt: pkg=nginx-full update_cache=yes
+
+- name: remove default config
+  command: rm /etc/nginx/sites-enabled/default removes=/etc/nginx/sites-enabled/default

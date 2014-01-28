@@ -1,5 +1,5 @@
 [reverse_proxy]
-ec2-54-201-248-255.us-west-2.compute.amazonaws.com
+54.213.1.63
 
 [reverse_proxy:vars]
 app_host = zephyr-preproduction.herokuapp.com

@@ -2,18 +2,7 @@
 - hosts: reverse_proxy
   remote_user: ubuntu
   sudo: yes
-  tasks:
-  - name: install nginx
-    apt: pkg=nginx-full update_cache=yes
-  - name: remove default config
-    command: rm /etc/nginx/sites-enabled/default removes=/etc/nginx/sites-enabled/default
-    notify:
-      - restart nginx
-  - name: ensure nginx is started
-    service: name=nginx state=started
-  handlers:
-  - name: restart nginx
-    service: name=nginx state=restarted
   roles:
+    - nginx
     - gust-reverse-proxy
 
